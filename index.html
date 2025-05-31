@@ -1,250 +1,862 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RouteX - Travel Agency</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papnmO7JJuJ+S7wl1F7Rql+O9bK8jHAYOe2Gm5cXfOT3Z1grQv+JlXeSR7VxM3RPHk1R0KtSpwM3bEJD1Cecbg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root {
-      --primary: #7CD321;
-      --dark: #1A1A1A;
-      --light: #F9F9F9;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      scroll-behavior: smooth;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 24px;
-      color: var(--primary);
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: 500;
-    }
-    .hero {
-      background: url('img1.avif') center/cover no-repeat;
-      text-align: center;
-      padding: 140px 20px;
-      color: white;
-    }
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.2;
-    }
-    .hero span {
-      color: var(--primary);
-    }
-    .hero p {
-      margin-top: 15px;
-      font-size: 16px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: var(--primary);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-    }
-    .section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
-    .about img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 12px;
-    }
-    .about-text h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-    .about-text ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .about-text li::before {
-      content: "\2713 ";
-      color: var(--primary);
-      font-weight: bold;
-    }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      text-align: center;
-    }
-    .card {
-      flex: 1;
-      min-width: 280px;
-      background: var(--light);
-      padding: 30px;
-      border-radius: 12px;
-    }
-    .card i {
-      font-size: 32px;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #042F1A;
-      color: white;
-      padding: 60px 20px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-bottom: 30px;
-    }
-    .footer-grid h4 {
-      margin-bottom: 10px;
-    }
-    .footer-grid ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .footer-grid li {
-      margin-bottom: 8px;
-    }
-    .footer-grid img {
-      width: 60px;
-      margin-right: 5px;
-      border-radius: 6px;
-    }
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid #ffffff22;
-      padding-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey with Confidence | Migrate with Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stats-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-right: 1.5rem;
+        }
+        
+        .stats-text {
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1.3;
+        }
+        
+        /* Services */
+        .services {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title h3 {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 3rem;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .service-content ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 4rem 0;
+            background-color: var(--light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Additional Sections */
+        .routex {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .routex p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .menu-links {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .menu-box ul {
+            list-style: none;
+        }
+        
+        .menu-box li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .menu-box a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s;
+        }
+        
+        .menu-box a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Contact Form */
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact .section-title h2,
+        .contact .section-title h3 {
+            color: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        .submit-btn {
+            background-color: var(--accent);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-about p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+            }
+            
+            .stats-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .stats-text {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">RouteX</div>
+    <!-- Navigation -->
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#story">Story</a>
-      <a href="#visa">Visa</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
+        <div class="container nav-container">
+            <div class="logo">JourneyConfidence</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-    <div><i class="fa-solid fa-comments"></i> Need help?<br><strong>(307) 555–0133</strong></div>
-  </header>  <section class="hero" id="home">
-    <h1>Journey with Confidence<br><span>Migrate with Us</span></h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc.</p>
-    <a class="btn" href="#about">Learn More</a>
-  </section>  <section class="section about" id="about">
-    <img src="teamwork.jpeg" alt="Team Work">
-    <div class="about-text">
-      <h2>Unknown Wanderlust<br>Your Journey into</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc.</p>
-      <ul>
-        <li>Safety Guides</li>
-        <li>Passport Assistance</li>
-      </ul>
-      <a class="btn" href="#story">Read More</a>
-    </div>
-  </section>  <section class="section" id="story">
-    <h2 style="text-align:center; margin-bottom:40px;">Adventure Unleashed<br>Discover Your Next</h2>
-    <div class="cards">
-      <div class="card">
-        <i class="fa-solid fa-utensils"></i>
-        <h3>Food and Wine Tours</h3>
-        <p>Explore culinary journeys like never before with handpicked tours.</p>
-      </div>
-      <div class="card">
-        <i class="fa-solid fa-plane"></i>
-        <h3>Travel Opportunities</h3>
-        <p>Discover travel options that suit every mood and budget.</p>
-      </div>
-      <div class="card">
-        <i class="fa-solid fa-user"></i>
-        <h3>Solo Travel Planning</h3>
-        <p>Perfect plans crafted for individuals with a spirit of adventure.</p>
-      </div>
-    </div>
-  </section>  <section class="section" id="visa">
-    <h2 style="text-align:center;">Visa Services</h2>
-    <p style="text-align:center; max-width:700px; margin:20px auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet tellus nec metus gravida eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
-  </section>  <section class="section" id="blog">
-    <h2 style="text-align:center;">Our Blog</h2>
-    <p style="text-align:center; max-width:700px; margin:20px auto;">Get inspired by stories, tips, and travel hacks from our travel experts and customers.</p>
-  </section>  <section class="section" id="contact">
-    <h2 style="text-align:center;">Contact Us</h2>
-    <p style="text-align:center; max-width:700px; margin:20px auto;">Have questions or need support? Reach out and our team will be in touch.</p>
-  </section>  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>RouteX</h4>
-        <p>Corporate business typically refers to large-scale migrations or organizations.</p>
-      </div>
-      <div>
-        <h4>Service Menu</h4>
-        <ul>
-          <li><a href="#">Mistakes To Avoid</a></li>
-          <li><a href="#">Your Startup</a></li>
-          <li><a href="#">Know About Fonts</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Useful Links</h4>
-        <ul>
-          <li><a href="#">Latest News</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">General Inquiries</a></li>
-          <li><a href="#">Case Studies</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Gallery</h4>
-        <img src="person.jpeg" alt="Gallery1">
-        <img src="person1.jpeg" alt="Gallery2">
-        <img src="person2.jpeg" alt="Gallery3">
-        <img src="person3.jpeg" alt="Gallery4">
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; RouteX 2024 | All Rights Reserved | <a href="#" style="color: var(--primary);">Privacy Policy</a> | <a href="#contact" style="color: var(--primary);">Contact Us</a></p>
-    </div>
-  </footer>
+
+    <!-- Header/Hero -->
+    <header id="home">
+        <div class="container header-content">
+            <h1>Journey with Confidence<br>Migrate with Us</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
+            <a href="#contact" class="btn" style="margin-top: 1.5rem;">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stats-number">10+</div>
+                <div class="stats-text">
+                    <div>Years Experience</div>
+                    <div>Helping Travelers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="service-card">
+                <div class="service-img">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="service-content">
+                    <h3>ADOPT US</h3>
+                    <h4>Unknown Wanderlust Your Journey into</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-color: #e3f2fd;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Safety Orders</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
+                        <ul>
+                            <li>Travel safety guidelines</li>
+                            <li>Emergency protocols</li>
+                            <li>Risk assessment</li>
+                        </ul>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-color: #fff8e1;">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Passport Assistance</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
+                        <ul>
+                            <li>Application guidance</li>
+                            <li>Document preparation</li>
+                            <li>Expedited services</li>
+                        </ul>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title">
+                <h2>OUR SERVICES</h2>
+                <h3>Adventure Unleashed Discover Your Next</h3>
+            </div>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-color: #f3e5f5;">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Food and Wine Tours</h3>
+                        <p>Dolor sit amet, consectetur adipiscing elit. Sed sit amet nonummy nibh euismod tincidunt ut laoreet dolore magna aliquip ex ea commodo consequat.</p>
+                        <ul>
+                            <li>Local cuisine experiences</li>
+                            <li>Vineyard tours</li>
+                            <li>Cooking classes</li>
+                        </ul>
+                        <a href="#" class="btn">Explore Tours</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-color: #e8f5e9;">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Travel Opportunities</h3>
+                        <p>Dolor sit amet, consectetur adipiscing elit. Sed sit amet nonummy nibh euismod tincidunt ut laoreet dolore magna aliquip ex ea commodo consequat.</p>
+                        <ul>
+                            <li>Exclusive destinations</li>
+                            <li>Seasonal offers</li>
+                            <li>Group discounts</li>
+                        </ul>
+                        <a href="#" class="btn">View Opportunities</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img" style="background-color: #e0f7fa;">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Solo Travel Planning</h3>
+                        <p>Dolor sit amet, consectetur adipiscing elit. Sed sit amet nonummy nibh euismod tincidunt ut laoreet dolore magna aliquip ex ea commodo consequat.</p>
+                        <ul>
+                            <li>Personalized itineraries</li>
+                            <li>Safety recommendations</li>
+                            <li>Solo-friendly accommodations</li>
+                        </ul>
+                        <a href="#" class="btn">Plan Your Trip</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RouteX Section -->
+    <section class="routex">
+        <div class="container">
+            <h3>RouteX</h3>
+            <p>Congestifcien cursus i gecidig vietra isc ligula adem van acusit consequatus et veritatis. Our proprietary routing technology ensures you get the most efficient and enjoyable travel experience possible.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>GALLERY</h2>
+                <h3>Town4 Confident Privacy Inc.</h3>
+            </div>
+            
+            <div class="gallery-grid">
+                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
+                </a>
+                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
+                </a>
+                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
+                </a>
+                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
+                </a>
+                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
+                </a>
+                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Links -->
+    <section class="menu-links">
+        <div class="container menu-container">
+            <div class="menu-box">
+                <h3>Service2 Menu</h3>
+                <ul>
+                    <li><a href="#">Plasiasm b. hand</a></li>
+                    <li><a href="#">Vius idtanto</a></li>
+                    <li><a href="#">Konumfabcul fonts</a></li>
+                    <li><a href="#">Konumfabcul fonts</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-box">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Lutea telenu</a></li>
+                    <li><a href="#">Camera</a></li>
+                    <li><a href="#">Concert invalans</a></li>
+                    <li><a href="#">Cana flavilans</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>CONTACT US</h2>
+                <h3>Get in touch to start your journey</h3>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service</option>
+                        <option value="safety">Safety Orders</option>
+                        <option value="passport">Passport Assistance</option>
+                        <option value="food">Food and Wine Tours</option>
+                        <option value="travel">Travel Opportunities</option>
+                        <option value="solo">Solo Travel Planning</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">JourneyConfidence</div>
+                    <p>Helping travelers and migrants navigate the world with confidence since 2013. Our expert team provides comprehensive services to make your journey seamless.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Safety Orders</a></li>
+                        <li><a href="#">Passport Assistance</a></li>
+                        <li><a href="#">Food & Wine Tours</a></li>
+                        <li><a href="#">Travel Opportunities</a></li>
+                        <li><a href="#">Solo Travel Planning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 Journey with Confidence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For demonstration, we'll just show an alert
+                alert('Thank you for your message! We will contact you soon.');
+                this.reset();
+            });
+        }
+        
+        // Lightbox configuration
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2'
+        });
+    </script>
 </body>
 </html>
