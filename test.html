@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RouteX - Migrate with Confidence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: white;
+      color: #0d0d0d;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #0d0d0d;
+      font-weight: 500;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .contact-info span {
+      font-weight: bold;
+      margin-left: 5px;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+      background: url('img1.avif') no-repeat center center/cover;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(76, 175, 80, 0.2); /* green overlay */
+      z-index: 0;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero button {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .hero .highlight {
+      color: #a4df3f;
+    }
+
+    .hero p {
+      margin: 20px auto;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      background-color: #a4df3f;
+      border: none;
+      border-radius: 25px;
+      color: #0d0d0d;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background-color: #8ec62e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img2.jpeg" alt="RouteX Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">STORY</a></li>
+        <li><a href="#">VISA</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">PAGE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="contact-info">
+      📞 Need help? <span>(307) 555-0133</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Journey with Confidence <span class="highlight">Migrate</span> with Us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc. Duis egestas ac ante sed tincidunt.</p>
+    <button>Learn More →</button>
+  </section>
+</body>
+</html>
