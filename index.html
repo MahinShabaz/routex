@@ -1,862 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey with Confidence | Migrate with Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #333;
-            --text-light: #7f8c8d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: #f9f9f9;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            opacity: 0.9;
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Stats Section */
-        .stats {
-            background-color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .stats-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-right: 1.5rem;
-        }
-        
-        .stats-text {
-            text-align: left;
-            font-weight: 600;
-            font-size: 1.2rem;
-            line-height: 1.3;
-        }
-        
-        /* Services */
-        .services {
-            padding: 4rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .section-title h3 {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            font-weight: 400;
-        }
-        
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .service-img {
-            height: 200px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 3rem;
-        }
-        
-        .service-content {
-            padding: 1.5rem;
-        }
-        
-        .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .service-content p {
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-        }
-        
-        .service-content ul {
-            list-style-position: inside;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary);
-        }
-        
-        /* Gallery */
-        .gallery {
-            padding: 4rem 0;
-            background-color: var(--light);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .gallery-item {
-            height: 200px;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Additional Sections */
-        .routex {
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .routex p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .menu-links {
-            padding: 3rem 0;
-            background-color: white;
-        }
-        
-        .menu-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .menu-box h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light);
-        }
-        
-        .menu-box ul {
-            list-style: none;
-        }
-        
-        .menu-box li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .menu-box a {
-            text-decoration: none;
-            color: var(--text);
-            transition: color 0.3s;
-        }
-        
-        .menu-box a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Contact Form */
-        .contact {
-            padding: 4rem 0;
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .contact .section-title h2,
-        .contact .section-title h3 {
-            color: white;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-        }
-        
-        .submit-btn {
-            background-color: var(--accent);
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: #c0392b;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 0 1.5rem;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-about p {
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .footer-links h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .footer-links h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                transition: left 0.3s;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 1rem 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .stats-container {
-                flex-direction: column;
-            }
-            
-            .stats-number {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-            
-            .stats-text {
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RouteX - Journey with Confidence</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding-top: 80px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero-section {
+      height: 100vh;
+      background: url('images/img1.avif') center center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 60, 40, 0.6);
+      z-index: 1;
+    }
+
+    .hero-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-section img {
+      border-radius: 10px;
+    }
+
+    .about-section .bg-success {
+      background-color: #28a745 !important;
+    }
+
+    .services-section {
+      background-color: #f9fafc;
+    }
+
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #e6f4ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .footer {
+      background-color: #004225;
+      color: #fff;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <div class="logo">JourneyConfidence</div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-success" href="#home">RouteX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#story">Story</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#visa" data-bs-toggle="dropdown">Visa</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#visa">Tourist Visa</a></li>
+              <li><a class="dropdown-item" href="#visa">Student Visa</a></li>
             </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#page">Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="ms-3 d-none d-lg-block">
+          <small class="text-muted">Need help?</small><br/>
+          <strong class="text-dark">(307) 555–0133</strong>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Header/Hero -->
-    <header id="home">
-        <div class="container header-content">
-            <h1>Journey with Confidence<br>Migrate with Us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
-            <a href="#contact" class="btn" style="margin-top: 1.5rem;">Get Started</a>
+  <!-- Hero Section -->
+  <section class="hero-section text-white d-flex align-items-center" id="home">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">Journey with Confidence</h1>
+      <h2 class="fw-bold text-success">Migrate with Us</h2>
+      <p class="lead mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc.</p>
+      <a href="#about" class="btn btn-success px-4 py-2 mt-3">Learn More</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section py-5 bg-light" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <img src="images/person2.jpeg" class="img-fluid shadow-sm" alt="about1">
+              <img src="images/person1.jpeg" class="img-fluid shadow-sm mt-3" alt="about2">
+            </div>
+            <div class="col-6 d-flex align-items-end">
+              <img src="images/person3.jpeg" class="img-fluid shadow" alt="about3">
+            </div>
+          </div>
+          <div class="mt-4 bg-success text-white text-center rounded p-3 w-50">
+            <h4 class="mb-0">15+</h4>
+            <small>Years Of Experience</small>
+          </div>
         </div>
-    </header>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stats-number">10+</div>
-                <div class="stats-text">
-                    <div>Years Experience</div>
-                    <div>Helping Travelers</div>
-                </div>
-            </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <h6 class="text-success">ABOUT US</h6>
+          <h2 class="fw-bold">Unknown Wanderlust<br/>Your Journey into</h2>
+          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fa fa-check-circle text-success me-2"></i> Safety Guides</li>
+            <li><i class="fa fa-check-circle text-success me-2"></i> Passport Assistance</li>
+          </ul>
+          <a href="#services" class="btn btn-success mt-3">Read More</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Main Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="service-card">
-                <div class="service-img">
-                    <i class="fas fa-globe-americas"></i>
-                </div>
-                <div class="service-content">
-                    <h3>ADOPT US</h3>
-                    <h4>Unknown Wanderlust Your Journey into</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
-                    <a href="#" class="btn">Learn More</a>
-                </div>
+  <!-- Services Section -->
+  <section class="services-section py-5" id="services">
+    <div class="container text-center">
+      <h6 class="text-success">OUR SERVICES</h6>
+      <h2 class="fw-bold mb-5">Adventure Unleashed<br/>Discover Your Next</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card service-card h-100 p-4 border-0 shadow-sm rounded-4">
+            <div class="icon-box mb-3 text-success">
+              <i class="fas fa-utensils fa-2x"></i>
             </div>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-img" style="background-color: #e3f2fd;">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Safety Orders</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
-                        <ul>
-                            <li>Travel safety guidelines</li>
-                            <li>Emergency protocols</li>
-                            <li>Risk assessment</li>
-                        </ul>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-color: #fff8e1;">
-                        <i class="fas fa-passport"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Passport Assistance</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt ut enim non eros. Duis aperis nisi enim sapienque elit.</p>
-                        <ul>
-                            <li>Application guidance</li>
-                            <li>Document preparation</li>
-                            <li>Expedited services</li>
-                        </ul>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-title">
-                <h2>OUR SERVICES</h2>
-                <h3>Adventure Unleashed Discover Your Next</h3>
-            </div>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-img" style="background-color: #f3e5f5;">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Food and Wine Tours</h3>
-                        <p>Dolor sit amet, consectetur adipiscing elit. Sed sit amet nonummy nibh euismod tincidunt ut laoreet dolore magna aliquip ex ea commodo consequat.</p>
-                        <ul>
-                            <li>Local cuisine experiences</li>
-                            <li>Vineyard tours</li>
-                            <li>Cooking classes</li>
-                        </ul>
-                        <a href="#" class="btn">Explore Tours</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-color: #e8f5e9;">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Travel Opportunities</h3>
-                        <p>Dolor sit amet, consectetur adipiscing elit. Sed sit amet nonummy nibh euismod tincidunt ut laoreet dolore magna aliquip ex ea commodo consequat.</p>
-                        <ul>
-                            <li>Exclusive destinations</li>
-                            <li>Seasonal offers</li>
-                            <li>Group discounts</li>
-                        </ul>
-                        <a href="#" class="btn">View Opportunities</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-img" style="background-color: #e0f7fa;">
-                        <i class="fas fa-hiking"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Solo Travel Planning</h3>
-                        <p>Dolor sit amet, consectetur adipiscing elit. Sed sit amet nonummy nibh euismod tincidunt ut laoreet dolore magna aliquip ex ea commodo consequat.</p>
-                        <ul>
-                            <li>Personalized itineraries</li>
-                            <li>Safety recommendations</li>
-                            <li>Solo-friendly accommodations</li>
-                        </ul>
-                        <a href="#" class="btn">Plan Your Trip</a>
-                    </div>
-                </div>
-            </div>
+            <h5 class="fw-semibold">Food and Wine Tours</h5>
+            <p class="text-muted small">Explore gourmet flavors and fine wines with curated culinary journeys.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- RouteX Section -->
-    <section class="routex">
-        <div class="container">
-            <h3>RouteX</h3>
-            <p>Congestifcien cursus i gecidig vietra isc ligula adem van acusit consequatus et veritatis. Our proprietary routing technology ensures you get the most efficient and enjoyable travel experience possible.</p>
+        <div class="col-md-4">
+          <div class="card service-card h-100 p-4 border-0 shadow-sm rounded-4">
+            <div class="icon-box mb-3 text-success">
+              <i class="fas fa-globe-americas fa-2x"></i>
+            </div>
+            <h5 class="fw-semibold">Travel Opportunities</h5>
+            <p class="text-muted small">From culture to adventure, unlock worldwide travel experiences tailored for you.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>GALLERY</h2>
-                <h3>Town4 Confident Privacy Inc.</h3>
+        <div class="col-md-4">
+          <div class="card service-card h-100 p-4 border-0 shadow-sm rounded-4">
+            <div class="icon-box mb-3 text-success">
+              <i class="fas fa-suitcase-rolling fa-2x"></i>
             </div>
-            
-            <div class="gallery-grid">
-                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
-                </a>
-                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
-                </a>
-                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
-                </a>
-                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
-                </a>
-                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
-                </a>
-                <a href="https://via.placeholder.com/800x600" data-lightbox="gallery" class="gallery-item">
-                    <img src="https://via.placeholder.com/400x300" alt="Travel destination">
-                </a>
-            </div>
+            <h5 class="fw-semibold">Solo Travel Planning</h5>
+            <p class="text-muted small">Plan with confidence. Get expert guidance and safe solo routes worldwide.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Menu Links -->
-    <section class="menu-links">
-        <div class="container menu-container">
-            <div class="menu-box">
-                <h3>Service2 Menu</h3>
-                <ul>
-                    <li><a href="#">Plasiasm b. hand</a></li>
-                    <li><a href="#">Vius idtanto</a></li>
-                    <li><a href="#">Konumfabcul fonts</a></li>
-                    <li><a href="#">Konumfabcul fonts</a></li>
-                </ul>
-            </div>
-            
-            <div class="menu-box">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li><a href="#">Lutea telenu</a></li>
-                    <li><a href="#">Camera</a></li>
-                    <li><a href="#">Concert invalans</a></li>
-                    <li><a href="#">Cana flavilans</a></li>
-                </ul>
-            </div>
+  <!-- Placeholder Sections -->
+  <section id="story" class="py-5 bg-white text-center">
+    <div class="container">
+      <h2 class="fw-bold">Our Story</h2>
+      <p class="text-muted">This is a placeholder for the Story section. Add content here.</p>
+    </div>
+  </section>
+
+  <section id="visa" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold">Visa Information</h2>
+      <p class="text-muted">Details for Tourist and Student Visas go here.</p>
+    </div>
+  </section>
+
+  <section id="blog" class="py-5 text-center">
+    <div class="container">
+      <h2 class="fw-bold">Blog</h2>
+      <p class="text-muted">Latest blog updates can be shown here.</p>
+    </div>
+  </section>
+
+  <section id="page" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold">Additional Page</h2>
+      <p class="text-muted">Placeholder for additional page content.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 text-center">
+    <div class="container">
+      <h2 class="fw-bold">Contact Us</h2>
+      <p class="text-muted">Email: contact@routex.com | Phone: (307) 555–0133</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>RouteX</h5>
+          <p class="small">Corporate business typically refers to large-scale mansoli et enterprises or organizati.</p>
         </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>CONTACT US</h2>
-                <h3>Get in touch to start your journey</h3>
-            </div>
-            
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">Service Interested In</label>
-                    <select id="service" name="service">
-                        <option value="">Select a service</option>
-                        <option value="safety">Safety Orders</option>
-                        <option value="passport">Passport Assistance</option>
-                        <option value="food">Food and Wine Tours</option>
-                        <option value="travel">Travel Opportunities</option>
-                        <option value="solo">Solo Travel Planning</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn submit-btn">Send Message</button>
-            </form>
+        <div class="col-md-2">
+          <h6>Service Menu</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#">Mistakes to Avoid</a></li>
+            <li><a href="#">Your Startup</a></li>
+            <li><a href="#">Know About Fonts</a></li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <div class="footer-logo">JourneyConfidence</div>
-                    <p>Helping travelers and migrants navigate the world with confidence since 2013. Our expert team provides comprehensive services to make your journey seamless.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Safety Orders</a></li>
-                        <li><a href="#">Passport Assistance</a></li>
-                        <li><a href="#">Food & Wine Tours</a></li>
-                        <li><a href="#">Travel Opportunities</a></li>
-                        <li><a href="#">Solo Travel Planning</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>© 2023 Journey with Confidence. All rights reserved.</p>
-            </div>
+        <div class="col-md-2">
+          <h6>Useful Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#">Latest News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">General Inquiries</a></li>
+            <li><a href="#">Case Studies</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="col-md-4">
+          <h6>Gallery</h6>
+          <div class="row g-2">
+            <div class="col-4"><img src="images/person1.jpeg" class="img-fluid rounded" alt="gallery"></div>
+            <div class="col-4"><img src="images/person2.jpeg" class="img-fluid rounded" alt="gallery"></div>
+            <div class="col-4"><img src="images/person3.jpeg" class="img-fluid rounded" alt="gallery"></div>
+            <div class="col-4"><img src="images/service1.jpeg" class="img-fluid rounded" alt="gallery"></div>
+            <div class="col-4"><img src="images/service2.jpeg" class="img-fluid rounded" alt="gallery"></div>
+            <div class="col-4"><img src="images/person1.jpeg" class="img-fluid rounded" alt="gallery"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center small pt-4 border-top mt-4">© RouteX 2024 | All Rights Reserved</div>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                }
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to a server
-                // For demonstration, we'll just show an alert
-                alert('Thank you for your message! We will contact you soon.');
-                this.reset();
-            });
-        }
-        
-        // Lightbox configuration
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'albumLabel': 'Image %1 of %2'
-        });
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
