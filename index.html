@@ -4,158 +4,201 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RouteX Travel</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Floating animation */
+    @keyframes floatEffect {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    .floating {
+      animation: floatEffect 6s ease-in-out infinite;
+    }
+
+    /* Parallax-like motion on mousemove */
+    .parallax-section {
+      transition: transform 0.1s ease-out;
+      will-change: transform;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
     <div class="container">
-      <div class="brand">
-        <img src="logo.jpeg" alt="RouteX Logo" class="logo" />
-        <span><span class="highlight">Route</span>X</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#story">STORY </a></li>
-        <li class="dropdown"><a href="#visa">VISA</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">student visa</a></li>
-          <li><a href="#">visit visa</a></li>
-          <li><a href="#">work visa</a></li>
-        </ul></li>
-        <li><a href="#blog">BLOG</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-      <div class="help">
-        <div class="label">Need Help?</div>
-        <div class="phone">+91 98765 43210</div>
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.jpeg" alt="RouteX Logo" class="me-2" style="width: 40px; height: 40px; mix-blend-mode: multiply;">
+        <span><span class="text-success fw-bold">Route</span>X</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link" href="#story">STORY</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#visa" id="visaDropdown" role="button" data-bs-toggle="dropdown">VISA</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Student Visa</a></li>
+              <li><a class="dropdown-item" href="#">Visit Visa</a></li>
+              <li><a class="dropdown-item" href="#">Work Visa</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#blog">BLOG</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+        </ul>
+        <div class="ms-4 text-end d-none d-lg-block">
+          <div class="fw-medium small">Need Help?</div>
+          <div class="fw-bold">+91 98765 43210</div>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" >
-    <div class="overlay">
-      <h1 class="fade-in">Journey with Confidence</h1>
-      <h1 class="fade-in delay">Migrate with Us</h1>
-      <p class="fade-in delay2">Discover hidden gems, plan unforgettable journeys, and travel with confidence through our expert services.</p>
-      <a href="#about" class="btn fade-in delay3">Learn More</a>
+  <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="background: url('images/img1.avif') center/cover no-repeat; height: 100vh;">
+    <div class="overlay bg-dark bg-opacity-50 w-100 h-100 d-flex flex-column justify-content-center align-items-center px-3 floating">
+      <h1 class="display-4 fade-in">Journey with Confidence</h1>
+      <h1 class="display-4 fade-in delay">Migrate with Us</h1>
+      <p class="lead fade-in delay2">Discover hidden gems, plan unforgettable journeys, and travel with confidence through our expert services.</p>
+      <a href="#about" class="btn btn-success mt-3 fade-in delay3">Learn More</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="about scroll-animate" id="about">
-    
-    <div class="grid-images">
-      <img src="person1.jpeg" alt="Team Meeting" />
-      <img src="person2.jpeg" alt="Passport Ready" />
-      <img src="person3.jpeg" alt="Client Discussion" />
-      <div class="experience-box">
-        <strong>10+</strong>
-        <span>Years Of<br>Experience</span>
+  <section class="py-5" id="about">
+    <div class="container floating">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="row g-2">
+            <div class="col-6">
+              <img src="person1.jpeg" class="img-fluid rounded shadow-sm" alt="Team Meeting">
+              <img src="person3.jpeg" class="img-fluid rounded shadow-sm mt-2" alt="Client Discussion">
+            </div>
+            <div class="col-6">
+              <img src="person2.jpeg" class="img-fluid rounded shadow-sm" alt="Passport Ready">
+              <div class="bg-success text-white text-center p-4 rounded mt-2">
+                <h3 class="mb-0">10+</h3>
+                <p class="mb-0">Years Of<br>Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-success fw-semibold">ABOUT US <img src="tick.png" alt="tick" style="height: 20px; width: 22px;"></h5>
+          <h2 class="fw-bold">Unknown Wanderlust<br>Your Journey into</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc. Duis egestas ac ante sed tincidunt.</p>
+          <div class="d-flex gap-4 flex-wrap">
+            <div class="d-flex align-items-start gap-2">
+              <img src="tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
+              <div><strong>Safety Guides</strong><br><small>Lorem ipsum dolor sit amet</small></div>
+            </div>
+            <div class="d-flex align-items-start gap-2">
+              <img src="tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
+              <div><strong>Passport Assistance</strong><br><small>Lorem ipsum dolor sit amet</small></div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-outline-success mt-3">Read More →</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="about-right scroll-animate">
-    <p class="sub-heading">ABOUT US <img style="height: 20px; width: 22px;" src="images/tick.png"  alt=""></p>
-    <h2>Unknown Wanderlust<br>Your Journey into</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc. Duis egestas ac ante sed tincidunt.</p>
-    <div class="features-row">
-  <div class="feature-box">
-    <img src="tick.png" alt="check" class="icon" />
-    <div>
-      <strong>Safety Guides</strong>
-      <p>Lorem ipsum dolor sit amet</p>
-    </div>
-  </div>
-
-  <div class="feature-box scroll-animate">
-    <img src="tick.png" alt="check" class="icon" />
-    <div>
-      <strong>Passport Assistance</strong>
-      <p>Lorem ipsum dolor sit amet</p>
-    </div>
-  </div>
-</div>
-
-    <a href="#" class="btn">Read More →</a>
-  </div>
-</section>
-
+  </section>
 
   <!-- Services Section -->
-  <section class="services scroll-animate" id="services">
-    <h2 class="green">Our Services</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>Food and Wine Tours</h3>
-        <p>Personalized travel plans to suit your schedule, interests, and budget.</p>
-      </div>
-      <div class="card">
-        <h3>Travel Oppurtunities</h3>
-        <p>Get the best deals on domestic and international flights instantly.</p>
-      </div>
-      <div class="card">
-        <h3>Solo Travel Planning</h3>
-        <p>Stay at top-rated hotels around the globe with RouteX's booking service.</p>
+  <section class="bg-light py-5" id="services">
+    <div class="container text-center">
+      <h2 class="text-success">Our Services</h2>
+      <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="food and wine.jpeg" alt="Logo" class="service-logo mb-3" />
+              <h5 class="card-title">Food and Wine Tours</h5>
+              <p class="card-text">Personalized travel plans to suit your schedule, interests, and budget.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="food and wine.jpeg" alt="Logo" class="service-logo mb-3" />
+              <h5 class="card-title">Travel Opportunities</h5>
+              <p class="card-text">Get the best deals on domestic and international flights instantly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <img src="food and wine.jpeg" alt="Logo" class="service-logo mb-3" />
+              <h5 class="card-title">Solo Travel Planning</h5>
+              <p class="card-text">Stay at top-rated hotels around the globe with RouteX's booking service.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h2><span class="highlight">Route</span>X</h2>
-        <p>Start your next journey with us. Safe, smart, and unforgettable travel experiences await.</p>
-      </div>
-      <div class="footer-section footer-links scroll-animate">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-        </ul>
-      </div>
-      <div class="footer-section scroll-animate">
-        <h4>Gallery</h4>
-        <div class="gallery">
-          <img src="service1.jpeg" alt="Gallery1" />
-          <img src="service2.jpeg" alt="Gallery2" />
-          <img src="teamwork.jpeg" alt="Gallery3" />
+  <footer class="bg-success text-white pt-5 pb-3" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h2><span class="fw-bold">Route</span>X</h2>
+          <p>Start your next journey with us. Safe, smart, and unforgettable travel experiences await.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Home</a></li>
+            <li><a href="#about" class="text-white">About</a></li>
+            <li><a href="#services" class="text-white">Services</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5>Gallery</h5>
+          <div class="d-flex flex-wrap">
+            <img src="service1.jpeg" class="img-thumbnail me-1 mb-1" style="width: 60px; height: 60px;" alt="Gallery1">
+            <img src="service2.jpeg" class="img-thumbnail me-1 mb-1" style="width: 60px; height: 60px;" alt="Gallery2">
+            <img src="teamwork.jpeg" class="img-thumbnail me-1 mb-1" style="width: 60px; height: 60px;" alt="Gallery3">
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5>Contact</h5>
+          <ul class="list-unstyled">
+            <li>Email: info@routex.com</li>
+            <li>Phone: +91 98765 43210</li>
+            <li>Location: Kerala, India</li>
+          </ul>
         </div>
       </div>
-      <div class="footer-section scroll-animate">
-        <h4>Contact</h4>
-        <ul>
-          <li>Email: info@routex.com</li>
-          <li>Phone: +91 98765 43210</li>
-          <li>Location: Kerala, India</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 RouteX. All rights reserved.
+      <div class="text-center border-top pt-3">© 2025 RouteX. All rights reserved.</div>
     </div>
   </footer>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+
+  <!-- Script for mouse parallax effect -->
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const sections = document.querySelectorAll(".floating");
+      sections.forEach(el => {
+        const speed = el.dataset.speed || 10;
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
     });
-  }, {
-    threshold: 0.1
-  });
+  </script>
 
-  document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
