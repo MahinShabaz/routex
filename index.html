@@ -1,92 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RouteX Travel</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RouteX - Journey with Confidence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <style>
-    /* Floating animation */
-    @keyframes floatEffect {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
+<style>
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    will-change: transform;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
 
-    .floating {
-      animation: floatEffect 6s ease-in-out infinite;
-    }
+  .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
 
-    /* Parallax-like motion on mousemove */
-    .parallax-section {
-      transition: transform 0.1s ease-out;
-      will-change: transform;
-    }
-  </style>
+    body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .hero {
+            background: url('images/img1.avif') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 15px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero h1 span {
+            color: #8CD211;
+        }
+
+        .hero button {
+            background-color: #8CD211;
+            border: none;
+        }
+
+        .about-section {
+            padding: 80px 15px;
+        }
+
+        .service-box {
+            background: #f8f8f8;
+            padding: 90px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background: #063f36;
+            color: white;
+            padding: 40px 15px;
+        }
+
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            background: #063f36;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
 </head>
+
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="logo.jpeg" alt="RouteX Logo" class="me-2" style="width: 40px; height: 40px; mix-blend-mode: multiply;">
-        <span><span class="text-success fw-bold">Route</span>X</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-          <li class="nav-item"><a class="nav-link" href="#story">STORY</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#visa" id="visaDropdown" role="button" data-bs-toggle="dropdown">VISA</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Student Visa</a></li>
-              <li><a class="dropdown-item" href="#">Visit Visa</a></li>
-              <li><a class="dropdown-item" href="#">Work Visa</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#blog">BLOG</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
-        </ul>
-        <div class="ms-4 text-end d-none d-lg-block">
-          <div class="fw-medium small">Need Help?</div>
-          <div class="fw-bold">+91 98765 43210</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#"><img src="images/logo.jpeg" alt="RouteX Logo" class="me-2" style="width: 40px; height: 40px; mix-blend-mode: multiply;"> <span class="fw-bold">RouteX</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" data-aos="fade-up" data-aos-delay="100">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Story</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#visa" data-bs-toggle="dropdown">Visa</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Tourist Visa</a></li>
+                            <li><a class="dropdown-item" href="#">Work Visa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#blog" data-bs-toggle="dropdown">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Travel Tips</a></li>
+                            <li><a class="dropdown-item" href="#">Guides</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-none d-lg-block ms-4 text-end" data-aos="fade-up" data-aos-delay="100">
+                    <small class="text-muted">Need help?</small>
+                    <div class="fw-bold">(307) 555–0133</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="background: url('img1.avif') center/cover no-repeat; height: 100vh;">
-    <div class="overlay bg-dark bg-opacity-50 w-100 h-100 d-flex flex-column justify-content-center align-items-center px-3 floating">
-      <h1 class="display-4 fade-in">Journey with Confidence</h1>
-      <h1 class="display-4 fade-in delay">Migrate with Us</h1>
-      <p class="lead fade-in delay2">Discover hidden gems, plan unforgettable journeys, and travel with confidence through our expert services.</p>
-      <a href="#about" class="btn btn-success mt-3 fade-in delay3">Learn More</a>
-    </div>
-  </section>
-
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="display-4 fade-in fw-bold">Journey with Confidence <br><span class="text-success">Migrate with Us</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+            <a href="#about" class="btn btn-success mt-3 fade-in delay3">Learn More</a>
+        </div>
+    </section>
   <!-- About Section -->
-  <section class="py-5" id="about">
+    <section class="py-5" id="about">
     <div class="container floating">
       <div class="row align-items-center">
         <div class="col-md-6">
           <div class="row g-2">
             <div class="col-6">
-              <img src="person1.jpeg" class="img-fluid rounded shadow-sm" alt="Team Meeting">
-              <img src="person3.jpeg" class="img-fluid rounded shadow-sm mt-2" alt="Client Discussion">
+              <img src="images/person1.jpeg" class="img-fluid rounded shadow-sm" alt="Team Meeting">
+              <img src="images/person3.jpeg" class="img-fluid rounded shadow-sm mt-2" alt="Client Discussion">
             </div>
             <div class="col-6">
-              <img src="person2.jpeg" class="img-fluid rounded shadow-sm" alt="Passport Ready">
+              <img src="images/person2.jpeg" class="img-fluid rounded shadow-sm" alt="Passport Ready">
               <div class="bg-success text-white text-center p-4 rounded mt-2">
                 <h3 class="mb-0">10+</h3>
                 <p class="mb-0">Years Of<br>Experience</p>
@@ -95,16 +147,16 @@
           </div>
         </div>
         <div class="col-md-6">
-          <h5 class="text-success fw-semibold">ABOUT US <img src="tick.png" alt="tick" style="height: 20px; width: 22px;"></h5>
+          <h5 class="text-success fw-semibold">ABOUT US <img src="images/tick.png" alt="tick" style="height: 20px; width: 22px;"></h5>
           <h2 class="fw-bold">Unknown Wanderlust<br>Your Journey into</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc. Duis egestas ac ante sed tincidunt.</p>
           <div class="d-flex gap-4 flex-wrap">
             <div class="d-flex align-items-start gap-2">
-              <img src="tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
+              <img src="images/tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
               <div><strong>Safety Guides</strong><br><small>Lorem ipsum dolor sit amet</small></div>
             </div>
             <div class="d-flex align-items-start gap-2">
-              <img src="tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
+              <img src="images/tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
               <div><strong>Passport Assistance</strong><br><small>Lorem ipsum dolor sit amet</small></div>
             </div>
           </div>
@@ -114,117 +166,109 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="bg-light py-5" id="services">
-    <div class="container text-center">
-      <h4 class="text-success text-center">Our Services</h4>
-      <h2 class="text-center">Adventure Unleashed Discover Your Next</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <i class="fas fa-utensils fa-2x text-success mb-3"></i>
-              <h5 class="card-title">Food and Wine Tours</h5>
-              <p class="card-text">Personalized travel plans to suit your schedule, interests, and budget.</p>
-            </div>
+    <!-- Services Section -->
+    <!-- Services Section -->
+<section class="services-section py-5" id="services" style="background-color: #f4f7f4;">
+  <div class="container">
+    <p class="text-success fw-medium small">OUR SERVICES <i class="fas fa-paper-plane"></i></p>
+    <h2 class="fw-bold" style="color: #043927;" data-aos="zoomin" data-aos-delay="100">Adventure Unleashed<br>Discover Your Next</h2>
+
+    <div class="row mt-4 g-5" style= "max-width: 900px; margin:auto;">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card text-center p-4 rounded-4 bg-white shadow-sm h-100">
+          <div class="service-icon mx-auto mb-3">
+            
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <i class="fas fa-globe fa-2x text-success mb-3"></i>
-              <h5 class="card-title">Travel Opportunities</h5>
-              <p class="card-text">Get the best deals on domestic and international flights instantly.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <i class="fas fa-plane-departure fa-2x text-success mb-3"></i>
-              <h5 class="card-title">Solo Travel Planning</h5>
-              <p class="card-text">Stay at top-rated hotels around the globe with RouteX's booking service.</p>
-            </div>
-          </div>
+          <i class="fas fa-utensils fa-2x text-success"></i>          
+          <h5 class="fw-bold">Food and Wine Tours</h5>
+          <p class="text-muted small">Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-
-  <div class="footer-container">
-    <!-- Column 1: Logo + Description + Social -->
-    <div class="row">
-    <div class="col-md-4 ">
-      <h5><img src="logo.jpeg" alt="RouteX Logo" class="me-2" style="width: 40px; height: 40px; mix-blend-mode: multiply;">RouteX </h5>
-      
-      <p>Corporate business typically refers to large-scale mansola it enterprises or organizat</p>
-      <div class="social-icons d-flex gap-2">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-pinterest-p"></i>
-        <i class="fa-brands fa-linkedin-in"></i>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card text-center p-4 rounded-4 bg-white shadow-sm h-100">
+          <div class="service-icon mx-auto mb-3">
+            
+          </div>
+          <i class="fas fa-globe fa-2x text-success mb-3"></i>
+          
+          <h5 class="fw-bold">Travel Opportunities</h5>
+          <p class="text-muted small">Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac</p>
+        </div>
       </div>
-    </div>
-
-    <!-- Column 2: Service Menu -->
-    <div class="col-md-3">
-      <h4>Service Menu</h4>
-      <ul>
-        <li><i class="fa-solid fa-check"></i> Mistakes To Avoid</li>
-        <li><i class="fa-solid fa-check"></i> Your Startup</li>
-        <li><i class="fa-solid fa-check"></i> Know About Fonts</li>
-        <li><i class="fa-solid fa-check"></i> Know About Fonts</li>
-      </ul>
-    </div>
-
-    <!-- Column 3: Useful Link -->
-    <div class="col-md-3">
-      <h4>Useful Link</h4>
-      <ul>
-        <li><i class="fa-solid fa-angle-right"></i> Latest News</li>
-        <li><i class="fa-solid fa-angle-right"></i> Careers</li>
-        <li><i class="fa-solid fa-angle-right"></i> General Inquiries</li>
-        <li><i class="fa-solid fa-angle-right"></i> Case Studies</li>
-      </ul>
-    </div>
-
-    <!-- Column 4: Gallery -->
-    <div class="col-md-2">
-      <h4>Gallery</h4>
-      <div class="gallery">
-        <img src="service1.jpeg" />
-        <img src="service2.jpeg" />
-        <img src="teamwork.jpeg" />
-        <img src="person3.jpeg" />
-        <img src="person2.jpeg" />
-        <img src="person1.jpeg" />
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card text-center p-4 rounded-4 bg-white shadow-sm h-100">
+          <div class="service-icon mx-auto mb-3">
+            
+          </div>
+          <i class="fas fa-plane-departure fa-2x text-success mb-3 "></i>
+          
+          <h5 class="fw-bold">Solo Travel Planning</h5>
+          <p class="text-muted small">Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac</p>
+        </div>
       </div>
     </div>
   </div>
-  </div class="mb-10 ">
-  <!-- Bottom Bar -->
-    <h6 class="text-center">© RRDevs 2024 | All Rights Reserved  | <a href="#" class="text-white">Terms & Condition</a> | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Contact Us</a></h6> 
-  </div>
-</footer>
+</section>
 
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>RouteX</h5>
+                    <p>Corporate business typically refers to large-scale mansolsi et enterprises or organizati</p>
+                    <div class="d-flex gap-2">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6>Service Menu</h6>
+                    <div class="footer-links">
+                        <a href="#">Mistakes To Avoid</a>
+                        <a href="#">Your Startup</a>
+                        <a href="#">Know About Fonts</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6>Useful Link</h6>
+                    <div class="footer-links">
+                        <a href="#">Latest News</a>
+                        <a href="#">Careers</a>
+                        <a href="#">General Inquiries</a>
+                        <a href="#">Case Studies</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h6>Gallery</h6>
+                    <div class="row g-1">
+                        <div class="col-4"><img src="images/person1.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/person3.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/person2.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/service1.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/service2.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/teamwork.jpeg" class="img-fluid rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom mt-3">
+            © RRDevs 2024 | All Rights Reserved &nbsp; | &nbsp; <a href="#" class="text-white">Terms & Condition</a> | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Contact Us</a>
+        </div>
+    </footer>
 
-  <!-- Script for mouse parallax effect -->
-  <script>
-    document.addEventListener("mousemove", (e) => {
-      const sections = document.querySelectorAll(".floating");
-      sections.forEach(el => {
-        const speed = el.dataset.speed || 10;
-        const x = (window.innerWidth - e.pageX * speed) / 100;
-        const y = (window.innerHeight - e.pageY * speed) / 100;
-        el.style.transform = `translate(${x}px, ${y}px)`;
-      });
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Add before </body> -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration
+    once: true      // animation triggers only once
+  });
+</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
