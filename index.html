@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
   .service-card {
@@ -24,15 +25,31 @@
   }
 
     body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Playfair Display', serif;
         }
 
-        .hero {
-            background: url('img1.avif') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 120px 15px;
-        }
+.hero {
+    position: relative;
+    background: url('images/img1.avif') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 15px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Overlay using ::before */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    z-index: -1; /* Behind content, in front of background */
+}
+
 
         .hero h1 {
             font-size: 3rem;
@@ -85,7 +102,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#"><img src="logo.jpeg" alt="RouteX Logo" class="me-2" style="width: 40px; height: 40px; mix-blend-mode: multiply;"> <span class="fw-bold">RouteX</span></a>
+            <a class="navbar-brand d-flex align-items-center" href="#"><img src="images/logo.jpeg" alt="RouteX Logo" class="me-2" style="width: 40px; height: 40px; mix-blend-mode: multiply;"> <span class="fw-bold">RouteX</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -134,11 +151,11 @@
         <div class="col-md-6">
           <div class="row g-2">
             <div class="col-6">
-              <img src="person1.jpeg" class="img-fluid rounded shadow-sm" alt="Team Meeting">
-              <img src="person3.jpeg" class="img-fluid rounded shadow-sm mt-2" alt="Client Discussion">
+              <img src="images/person1.jpeg" class="img-fluid rounded shadow-sm" alt="Team Meeting">
+              <img src="images/person3.jpeg" class="img-fluid rounded shadow-sm mt-2" alt="Client Discussion">
             </div>
             <div class="col-6">
-              <img src="person2.jpeg" class="img-fluid rounded shadow-sm" alt="Passport Ready">
+              <img src="images/person2.jpeg" class="img-fluid rounded shadow-sm" alt="Passport Ready">
               <div class="bg-success text-white text-center p-4 rounded mt-2">
                 <h3 class="mb-0">10+</h3>
                 <p class="mb-0">Years Of<br>Experience</p>
@@ -147,16 +164,16 @@
           </div>
         </div>
         <div class="col-md-6">
-          <h5 class="text-success fw-semibold">ABOUT US <img src="tick.png" alt="tick" style="height: 20px; width: 22px;"></h5>
+          <h5 class="text-success fw-semibold">ABOUT US <img src="images/tick.png" alt="tick" style="height: 20px; width: 22px;"></h5>
           <h2 class="fw-bold">Unknown Wanderlust<br>Your Journey into</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc. Duis egestas ac ante sed tincidunt.</p>
           <div class="d-flex gap-4 flex-wrap">
             <div class="d-flex align-items-start gap-2">
-              <img src="tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
+              <img src="images/tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
               <div><strong>Safety Guides</strong><br><small>Lorem ipsum dolor sit amet</small></div>
             </div>
             <div class="d-flex align-items-start gap-2">
-              <img src="tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
+              <img src="images/tick.png" alt="check" class="icon mt-1" style="width: 20px; height: 20px;">
               <div><strong>Passport Assistance</strong><br><small>Lorem ipsum dolor sit amet</small></div>
             </div>
           </div>
@@ -178,8 +195,9 @@
         <div class="service-card text-center p-4 rounded-4 bg-white shadow-sm h-100">
           <div class="service-icon mx-auto mb-3">
             
-          </div>
-          <i class="fas fa-utensils fa-2x text-success"></i>          
+          
+          <i class="fas fa-utensils fa-2x text-success"></i> 
+          </div>         
           <h5 class="fw-bold">Food and Wine Tours</h5>
           <p class="text-muted small">Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac</p>
         </div>
@@ -188,9 +206,9 @@
         <div class="service-card text-center p-4 rounded-4 bg-white shadow-sm h-100">
           <div class="service-icon mx-auto mb-3">
             
-          </div>
-          <i class="fas fa-globe fa-2x text-success mb-3"></i>
           
+          <i class="fas fa-globe fa-2x text-success "></i>
+          </div>
           <h5 class="fw-bold">Travel Opportunities</h5>
           <p class="text-muted small">Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac</p>
         </div>
@@ -199,9 +217,9 @@
         <div class="service-card text-center p-4 rounded-4 bg-white shadow-sm h-100">
           <div class="service-icon mx-auto mb-3">
             
-          </div>
-          <i class="fas fa-plane-departure fa-2x text-success mb-3 "></i>
           
+          <i class="fas fa-plane-departure fa-2x text-success "></i>
+          </div>
           <h5 class="fw-bold">Solo Travel Planning</h5>
           <p class="text-muted small">Dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac</p>
         </div>
@@ -244,12 +262,12 @@
                 <div class="col-md-2">
                     <h6>Gallery</h6>
                     <div class="row g-1">
-                        <div class="col-4"><img src="person1.jpeg" class="img-fluid rounded"></div>
-                        <div class="col-4"><img src="person3.jpeg" class="img-fluid rounded"></div>
-                        <div class="col-4"><img src="person2.jpeg" class="img-fluid rounded"></div>
-                        <div class="col-4"><img src="service1.jpeg" class="img-fluid rounded"></div>
-                        <div class="col-4"><img src="service2.jpeg" class="img-fluid rounded"></div>
-                        <div class="col-4"><img src="teamwork.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/person1.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/person3.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/person2.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/service1.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/service2.jpeg" class="img-fluid rounded"></div>
+                        <div class="col-4"><img src="images/teamwork.jpeg" class="img-fluid rounded"></div>
                     </div>
                 </div>
             </div>
